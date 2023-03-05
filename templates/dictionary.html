@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block pageheading %}
+dictionary
+{% endblock %}
+{% block title %}Maōri dictionary | home{% endblock %}
+
+{% block heading %}day la web cua minh{% endblock %}
+
+{% block main %}
+
+
+<table>
+
+    <div>
+        <tr>
+
+            <th>Maori</th>
+            <th>English</th>
+            <th>Category</th>
+            <th>Definition</th>
+            <th>Level</th>
+            <th>image</th>
+        </tr>
+   </div>
+        {% for vocab in vocabs %}
+
+   <div>
+        <tr>
+
+            <th>{{ vocab[1] }}</th>
+            <th>{{ vocab[2] }}</th>
+            <th>{{ vocab[3] }}</th>
+            <th>{{ vocab[4] }}</th>
+            <th>{{ vocab[5] }}</th>
+            <th><img src="C:\Users\20457\OneDrive - Wellington College\file LAP TRINH python\Maori Dictionary\Maori Dictionary\static\images\{{ vocab[6] }}.jpg"</th>
+        </tr>
+   </div>  
+
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}

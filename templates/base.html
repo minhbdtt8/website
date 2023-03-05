@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Suez+One&display=swap" rel="stylesheet">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="Description" content="Content: A dictionary to convert maori words to english.">
+</head>
+
+<body>
+
+
+		<header>
+			<h1>{% block heading %}{% endblock %}</h1>
+            <nav>
+                <ul class="navigation-list">
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/kidschool">Giới thiệu</a></li>
+                <li><a href="/exptworker">CS Thanh Xuân</a></li>
+                <li><a href="/changeStore">CS Đại Kim</a></li>
+                <li><a href="/BarOrPub">CS Đại Thanh</a></li>
+                <li><a href="/Mapschool">Trường mầm non quanh đây</a></li>
+
+
+                    {% if logged_in %}
+                <li><a href="/addword">addword</a></li>
+                {% for categorie in categories %}
+                <li><a href="/dictionary/{{categorie[0]}}">{{categorie[1]}}</a></li>
+                {% endfor %}
+                {% endif %}
+
+                </ul>
+            </nav>
+
+
+
+		</header>
+        <style>
+  .navigation-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navigation-list li:not(:last-child) {
+    margin-right: 1rem;
+  }
+</style>
+
+{#		<nav>#}
+{#            <label>#}
+{#                <input type="checkbox" name="drop_down_menu" />#}
+{#            </label>#}
+{#            <span></span>#}
+{#			<span></span>#}
+{#			<span></span>#}
+{#			<ul>#}
+{#                <li><a href="/">home</a></li>#}
+{##}
+
+{#                <li><a href="/kidschool"> Mầm non</a></li>#}
+{#                <li><a href="/Mapschool">trường mầm non quanh đây</a></li>#}
+{#                <li><a href="/exptworker">Xuất khẩu lao động</a></li>#}
+{#                <li><a href="/changeStore">Nhượng quyền</a></li>#}
+{#                <li><a href="/BarOrPub">Quán bar hoặc Pub</a></li>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#                {% if logged_in %}#}
+{#                <li><a href="/addword">addword</a></li>#}
+{#                {% for categorie in categories %}#}
+{#                <li><a href="/dictionary/{{categorie[0]}}">{{categorie[1]}}</a></li>#}
+{##}
+{##}
+{##}
+{#                {% endfor %}#}
+{#                {% endif %}#}
+{##}
+{#			</ul>#}
+{#		</nav>#}
+
+
+		<!--
+		=====================================================
+		==           Content row of the template.          ==
+		=====================================================
+		-->
+
+		<main>
+            {% block main%}
+
+            {% endblock %}
+
+
+
+        </main>
+
+
+		<footer>
+			<p>
+
+			</p>
+		</footer>
+
+	</div>
+</body>
+</html>

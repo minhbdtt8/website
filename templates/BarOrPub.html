@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block pageheading %}
+addword
+{% endblock %}
+{% block title %}Bis Company | Bar or Pub{% endblock %}
+Bar or Pub
+{% block heading %}Bis Company tất cả bạn cần tìm{% endblock %}
+
+
+
+{% block main %}
+<form class="myform" method="POST">
+    <div class="form-group">
+        <div class="form-label">Maori:</div>
+        <div class="form-element"><input id="Maori" name="Maori" type="Maori" required></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-label">English:</div>
+        <div class="form-element"><input id="English" name="English" type="English" required></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-label">Category:</div>
+        <div class="form-element"><input id="Category" name="Category" type="Category" required></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-label">Definition:</div>
+        <div class="form-element"><input id="Definition" name="Definition" type="Definition" required></div>
+    </div>
+
+    <div class="form-group">
+        <div class="form-label">level:</div>
+        <div class="form-element"><input id="level" name="level" type="level" required></div>
+    </div>
+
+    <div class="button-group">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+</form>
+{% endblock %}

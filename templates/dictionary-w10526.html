@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block pageheading %}
+dictionary
+{% endblock %}
+{% block title %}Maōri dictionary | home{% endblock %}
+
+{% block heading %}day la web cua minh{% endblock %}
+
+
+{% block main %}
+<form class="myform" method="post">
+    <div class="form-group">
+        <div class="form-label">English:</div>
+        <div class="form-element"><input id="English" name="English" type="English" required></div>
+    </div>
+
+
+
+
+    <div class="button-group">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+
+
+<table>
+        {% for vocab in vocab %}
+   <div>
+        <tr>
+            <th>ID</th>
+            <th>Maori</th>
+            <th>English</th>
+            <th>Category</th>
+            <th>Definition</th>
+            <th>Level</th>
+        </tr>
+   </div>
+   <div>
+        <tr>
+            <th>{{ vocab[6] }}</th>
+            <th>{{ vocab[1] }}</th>
+            <th>{{ vocab[2] }}</th>
+            <th>{{ vocab[3] }}</th>
+            <th>{{ vocab[4] }}</th>
+            <th>{{ vocab[5] }}</th>
+        </tr>
+   </div>
+
+    {% endfor %}
+</table>
+
+
+
+
+{% endblock %}

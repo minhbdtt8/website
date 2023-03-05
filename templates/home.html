@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Bis Company | home{% endblock %}
+home
+{% block heading %}
+    <div class="blockHeading">
+    <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/329392168_876392296923519_6310657560777518435_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Jgwjo1wNI-QAX8_4zeA&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCu2txgESw7u0z3hnQFrP4f3VfFNESECAj3eIPUq09qcw&oe=6404DE2F" alt="Your logo">
+    <h2>Mầm Non Bình Minh</h2>
+</div>
+
+    {% endblock %}
+
+{% block main %}
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="position: relative;">
+    <img src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/274719403_1097070720864526_4566996936715283151_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=0debeb&_nc_ohc=SdLMT0_qszsAX-9j5Nw&_nc_ht=scontent.fhan17-1.fna&oh=00_AfA12N6zRZJ81RaVFpd8_eOg_DbNqHbmuqGhDmgJKa6gCw&oe=6405A5D3" id="image" style="max-width: 100%">
+    <button style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);" onclick="prevImage()">&#8592;</button>
+    <button style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);" onclick="nextImage()">&#8594;</button>
+  </div>
+</div>
+
+<script>
+  let imageIndex = 1;
+  const numberOfImages = 3;
+
+  function prevImage() {
+    if (imageIndex <= 1) {
+      imageIndex = numberOfImages;
+    } else {
+      imageIndex--;
+    }
+    document.getElementById("image").src = getImageUrl(imageIndex);
+  }
+
+  function nextImage() {
+    if (imageIndex >= numberOfImages) {
+      imageIndex = 1;
+    } else {
+      imageIndex++;
+    }
+    document.getElementById("image").src = getImageUrl(imageIndex);
+  }
+
+  function getImageUrl(index) {
+    let imageUrl;
+    switch (index) {
+      case 1:
+        imageUrl = 'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/274870564_1097070917531173_6533051448106194596_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0debeb&_nc_ohc=lX7u2IQXtDsAX8DD5li&_nc_ht=scontent.fhan17-1.fna&oh=00_AfAquH9dWxEaTrMGfj4aIR1SM_XJrrtfrUvhRMSiQQa5XA&oe=64050D91';
+        break;
+      case 2:
+        imageUrl = 'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/275129959_1097070827531182_766102383435282895_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0debeb&_nc_ohc=y_mUOeNz5fMAX-v4HvN&_nc_ht=scontent.fhan17-1.fna&oh=00_AfBasyH4GxX9lUs1sBBwt6hp8B3I_lpd13yKQhR1HfK8_g&oe=6405E4CC';
+        break;
+      case 3:
+        imageUrl = 'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/275119131_1097070770864521_8241523573726476482_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=0debeb&_nc_ohc=V36SpjEz51MAX_O6UHa&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCG4APsSzjgw2nS1y3EW2KRtuM5V2SXxGa1SOYDRCNXsQ&oe=64059D57';
+        break;
+      default:
+        imageUrl = 'https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/274994375_1097070744197857_5843051225921143597_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0debeb&_nc_ohc=Nvl8BInDPsAAX-IXJH_&_nc_ht=scontent.fhan17-1.fna&oh=00_AfCT0ZPfF-sU-rpijc3u1zel4l_anOzImicT2sy0uH7Emw&oe=6406AB6A';
+        break;
+    }
+    return imageUrl;
+  }
+
+</script>
+
+{% endblock %}
